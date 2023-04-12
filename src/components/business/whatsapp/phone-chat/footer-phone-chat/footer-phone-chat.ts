@@ -14,7 +14,8 @@ export default defineComponent({
 
         const {
             emojiSelect,
-            openCloseEmojis
+            openCloseEmojis,
+            setEmojiSelect
         } = useEmojis();
 
         const {
@@ -53,17 +54,20 @@ export default defineComponent({
         }
 
         watch(emojiSelect, () => {
-            textMessage.value = textMessage.value + emojiSelect.value.emoji;
-            /*console.log(textMessage.value);
-            const withEmojis = /\p{Extended_Pictographic}/u
-            const arr = textMessage.value.split(' ');
-            arr.forEach(x => {
-                console.log(withEmojis.test(x));
-            });*/
-            
-            let contenteditable: any = document.querySelector('.message-multimedia');
-            contenteditable.innerHTML = `${contenteditable.innerHTML}<span style="display: none">${emojiSelect.value.emoji}</span><img src="data:image/png;base64,${emojiSelect.value.thumbail}" style="vertical-align:middle; font-size: 1.2em; height: 20px; width: 20px; display:inline-flex; margin: 0 0.2em"/>`;
-            showIconSendMessage();
+            if (emojiSelect.value) {
+                textMessage.value = textMessage.value + emojiSelect.value.emoji;
+                /*console.log(textMessage.value);
+                const withEmojis = /\p{Extended_Pictographic}/u
+                const arr = textMessage.value.split(' ');
+                arr.forEach(x => {
+                    console.log(withEmojis.test(x));
+                });*/
+                
+                let contenteditable: any = document.querySelector('.message-multimedia');
+                contenteditable.innerHTML = `${contenteditable.innerHTML}<span style="display: none">${emojiSelect.value.emoji}</span><img src="data:image/png;base64,${emojiSelect.value.thumbail}" style="vertical-align:middle; font-size: 1.2em; height: 20px; width: 20px; display:inline-flex; margin: 0 0.1em"/>`;
+                showIconSendMessage();
+                setEmojiSelect(null);
+            }
         });
 
         return {

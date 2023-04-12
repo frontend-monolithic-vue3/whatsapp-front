@@ -12,7 +12,7 @@
     <div class="info">
       <div class="data-info">
         <div class="name">
-          <span v-if="contact.newAlias" v-html="contact.newAlias"></span>
+          <span v-if="newAlias" v-html="newAlias"></span>
           <span v-else>{{ contact.alias }}</span>          
           <span
             class="date-last-message"
@@ -30,7 +30,7 @@
               v-if="contact.lastMessage?.status"
               :readStatus="contact.lastMessage?.status"
             />
-            <span v-if="contact.lastMessage?.newContent" v-html="contact.lastMessage?.newContent"></span>
+            <span v-if="newContent" v-html="newContent"></span>
             <span v-else>{{ contact.lastMessage?.content }}</span>
           </div>
           <div

@@ -1,14 +1,18 @@
 import { defineComponent, onMounted, onUnmounted, ref } from "vue";
 
 import { TypeMediaContentEnum } from "../../../../../../enums/type-media-content.enum";
+import { TypeModalEnum } from "../../../../../../enums/type-modal.enum";
 
 import useMultimediaOptions from "../../../../../../composables/business/multimedia-options.composable";
 import usePhoneChat from "../../../../../../composables/business/phone-chat.composable";
+import useModal from "../../../../../../composables/common/modal.composable";
 
 export default defineComponent({
     setup(props, { emit }) {
 
         const typeMediaContent = ref(0);
+
+        const { openCloseModal, setType } = useModal();
 
         const {
             isOpen,
@@ -34,11 +38,18 @@ export default defineComponent({
             }
         }
 
+        const openModalSendContact = (type: number) => {
+            setType(type);
+            openCloseModal(true);
+            emit('close-multimedia-options');
+        } 
+
         return {
             TypeMediaContentEnum,
+            TypeModalEnum,
             isOpen,
             typeMediaContent,
-            openCloseMultimediaOptions,
+            openModalSendContact,
             setTypeMediaContent,
             uploadFile
         }

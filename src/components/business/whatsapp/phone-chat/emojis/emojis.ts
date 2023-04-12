@@ -23,7 +23,7 @@ export default defineComponent({
             setCategorySelect,
             setEmojiSelect,
             getEmojisByCategory,
-            getFirstCategory
+            getCategoryByIndex
         } = useEmojis();
 
         const emojis = ref([]);
@@ -37,7 +37,7 @@ export default defineComponent({
         });
 
         onMounted(() => {
-            setCategorySelect(getFirstCategory());
+            setCategorySelect(getCategoryByIndex(0));
         });
 
         return {

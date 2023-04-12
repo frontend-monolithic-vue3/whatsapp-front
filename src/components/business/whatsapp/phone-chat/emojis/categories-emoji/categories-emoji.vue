@@ -1,6 +1,6 @@
 <template>
   <div class="categories-emoji">
-    <template v-for="category of getCategoriesEmoji()" :key="category.id">
+    <template v-for="category of categories" :key="category.id">
       <div class="category-emoji" :class="{'selected': category.id === categorySelect.id}" @click="selectCategory(category)">
         <span><em :class="category.icon"></em></span>
       </div>

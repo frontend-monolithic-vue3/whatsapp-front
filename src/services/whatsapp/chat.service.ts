@@ -16,12 +16,6 @@ class ServiceChat {
 
     async getConversations() {
         try {
-            conversations.forEach((x, index) => {
-                //@ts-ignore
-                conversations[index] = {...x, "newAlias": createHtmlMessageContent(x.alias)};
-                //@ts-ignore
-                conversations[index].lastMessage = {...x.lastMessage, "newContent": createHtmlMessageContent(x.lastMessage?.content)};
-            });
             return conversations;
         } catch(ex) {
             return [];

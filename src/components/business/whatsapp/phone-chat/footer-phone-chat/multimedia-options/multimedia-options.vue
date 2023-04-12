@@ -9,6 +9,7 @@
               @click="setTypeMediaContent(TypeMediaContentEnum.STICKER)"
                 ><em class="fas fa-images"></em></a
               >
+              <span class="tooltip">Sticker</span>
               <input
                 type="file"
                 style="display: none"
@@ -24,6 +25,7 @@
               @click="setTypeMediaContent(TypeMediaContentEnum.IMAGE)"
                 ><em class="fas fa-image"></em></a
               >
+              <span class="tooltip">Imágen</span>
               <input
                 type="file"
                 style="display: none"
@@ -35,10 +37,20 @@
           </li>
           <li class="option">
             <label
+              ><a class="media-contact"
+              @click="openModalSendContact(+TypeModalEnum.SEND_CONTACT)"
+                ><em class="fas fa-user"></em></a
+              >
+              <span class="tooltip">Contacto</span>
+            </label>
+          </li>
+          <li class="option">
+            <label
               ><a class="media-document"
               @click="setTypeMediaContent(TypeMediaContentEnum.DOCUMENT)"
                 ><em class="fas fa-file"></em></a
               >
+              <span class="tooltip">Documento</span>
               <input
                 type="file"
                 style="display: none"
@@ -49,9 +61,10 @@
           </li>
           <li class="option">
             <label
-              ><a class="media-contact"
+              ><a class="media-audio"
                 ><em class="fas fa-music"></em></a
               >
+              <span class="tooltip">Audio</span>
               <input
                 type="file"
                 style="display: none"

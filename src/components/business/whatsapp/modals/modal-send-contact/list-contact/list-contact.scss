@@ -1,0 +1,15 @@
+@import '../../../../../../assets/styles/variables';
+
+.#{$app-prefix}-list-contact {
+    background-color: var(--panel-modal-send-contact-list-contact-background-color);
+    padding: 0 0.5em;
+    height: $pix-450;
+    overflow-y: auto;
+
+    .title {
+        color: var(--panel-modal-send-contact-list-contact-title-font-color);
+        font-weight: 600;
+        padding: 2.5em 0em 1em 1.5em;
+        text-transform: uppercase;
+    }
+}

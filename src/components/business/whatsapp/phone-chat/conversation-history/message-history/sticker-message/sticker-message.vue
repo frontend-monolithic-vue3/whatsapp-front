@@ -1,10 +1,9 @@
 <template>
-<div class="sticker-container">
-  <div class="sticker-message" @click="openOverlayPreview">
-    <img class="image" :src="`${multimediaMessage.thumbail}`"/>
+  <div class="sticker-container">
+    <div class="sticker-message" @click="openOverlayPreview">
+      <img class="image" :src="`${multimediaMessage.thumbail}`" />
+    </div>
   </div>
-</div>
-
 </template>
 
 <script src="./sticker-message.ts" lang="ts"/>

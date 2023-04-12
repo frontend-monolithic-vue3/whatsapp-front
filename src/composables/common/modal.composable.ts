@@ -2,6 +2,7 @@ import { computed, shallowRef, watch } from "vue";
 import { useStore } from "vuex";
 
 import ModalChangeTheme from "../../components/business/whatsapp/modals/modal-change-theme/modal-change-theme.vue";
+import ModalSendContact from "../../components/business/whatsapp/modals/modal-send-contact/modal-send-contact.vue";
 
 import { executeAction } from "../../utils/vuex.util";
 
@@ -48,8 +49,10 @@ export default function useModal() {
 
     const chooseModalComponent = () => {
         const type = getType.value;
-        if(+type === +TypeModalEnum.CHANGE_THEME) {
+        if (+type === +TypeModalEnum.CHANGE_THEME) {
             return ModalChangeTheme;
+        } else if(+type === +TypeModalEnum.SEND_CONTACT) {
+            return ModalSendContact;
         } else {
             return null;
         }

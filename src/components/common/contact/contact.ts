@@ -1,10 +1,11 @@
-import { defineComponent } from "vue";
+import { defineComponent, ref, watchEffect } from "vue";
 
 import ReadConfirmation from "../read-confirmation/read-confirmation.vue";
 
 import useContact from "../../../composables/common/contact.composable";
 import useEmojis from "../../../composables/business/emojis.composable";
 import useOverlayPhoneChat from "../../../composables/business/overlay-phone-chat.composable";
+import { createHtmlMessageContent } from "../../../utils/media.util";
 
 export default defineComponent({
     components: {
@@ -16,7 +17,9 @@ export default defineComponent({
             default: {}
         }
     },
-    setup() {
+    setup(props) {
+        const newAlias = ref(null);
+        const newContent = ref(null);
 
         const {
             setContactSelect,
@@ -39,9 +42,19 @@ export default defineComponent({
             openCloseEmojis(false);
         }
 
+        watchEffect(() => {
+            newAlias.value = null;
+            newContent.value = null;            
+
+            newAlias.value = createHtmlMessageContent(props.contact.alias);
+            newContent.value = createHtmlMessageContent(props.contact.lastMessage?.content);
+        });
+
         return {
             contactSelect,
-            selectItem
+            selectItem,
+            newAlias,
+            newContent
         }
     }
 });

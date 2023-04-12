@@ -21,6 +21,9 @@ export const PANEL_MODAL_BOX_SHADOW_COLOR_2 = '--panel-modal-box-shadow-color-2'
 export const PANEL_MODAL_HEADER_ICON_COLOR = '--panel-modal-header-icon-color';
 export const PANEL_MODAL_HEADER_FONT_COLOR = '--panel-modal-header-font-color';
 
+export const PANEL_MODAL_SEND_CONTACT_LIST_CONTACT_BACKGROUND_COLOR = '--panel-modal-send-contact-list-contact-background-color';
+export const PANEL_MODAL_SEND_CONTACT_LIST_CONTACT_TITLE_FONT_COLOR = ' --panel-modal-send-contact-list-contact-title-font-color';
+
 export const PANEL_OVERSPREAD_PREVIEW_SUMMARY_CONTENT_OPTIONS_ICON_COLOR = '--panel-overspread-preview-summary-content-options-icon-color:';
 
 export const PANEL_HEADER_BACKGROUND_COLOR = '--panel-header-background-color';
@@ -120,6 +123,9 @@ export const PANEL_FOOTER_ICON_COLOR = '--panel-footer-icon-color';
 export const PANEL_FOOTER_ICON_SELECT_BACKGROUND_COLOR = '--panel-footer-icon-select-background-color';
 export const PANEL_FOOTER_MESSAGE_MULTIMEDIA_BACKGROUND_COLOR = '--panel-footer-message-multimedia-background-color';
 export const PANEL_FOOTER_MESSAGE_MULTIMEDIA_FONT_COLOR = '--panel-footer-message-multimedia-font-color';
+
+export const PANEL_MULTIMEDIA_OPTIONS_TOOLTIP_BACKGROUND_COLOR = '--panel-multimedia-options-tooltip-background-color';
+export const PANEL_MULTIMEDIA_OPTIONS_TOOLTIP_FONT_COLOR = '--panel-multimedia-options-tooltip-font-color';
 
 export const SCROLL_BACKGROUND_COLOR = '--scroll-background-color';
 

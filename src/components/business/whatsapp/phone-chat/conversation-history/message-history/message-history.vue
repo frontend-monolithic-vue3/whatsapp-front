@@ -34,7 +34,7 @@
         v-if="multimediaMessage.type === TypeMessageHistoryEnum.STICKER"
       />
       <div class="date">
-        <span>{{multimediaMessage.date}} <read-confirmation :readStatus="multimediaMessage.readStatus"/></span>
+        <span>{{multimediaMessage.date}} <read-confirmation v-if="multimediaMessage.fromMe" :readStatus="multimediaMessage.readStatus"/></span>
       </div>
     </div>
     <span v-if="!multimediaMessage.fromMe"></span>

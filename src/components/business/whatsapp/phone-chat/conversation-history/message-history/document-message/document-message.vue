@@ -1,6 +1,7 @@
 <template>
   <div :class="`${APP_PREFIX}-document-message`">
-    <div class="preview" :class="{'no-from-me': !multimediaMessage.fromMe}">
+    <div class="thumbail" v-if="multimediaMessage.thumbail"><img :src="`data:image/jpeg;base64,${multimediaMessage.thumbail}`"/></div>
+    <div class="preview" :class="{'no-from-me': !multimediaMessage.fromMe, 'no-thumbail': !multimediaMessage.thumbail}">
         <div class="content">
             <div class="icon">
                 <em class="fa-solid fa-file fa-2x"></em>

@@ -1,13 +1,23 @@
 @import "../../../../../../../assets/styles/variables";
 
 .#{$app-prefix}-document-message {
+    .thumbail {
+        border-radius: $pix-6 $pix-6 0 0;
+        cursor: pointer;
+        height: $pix-100;
+        overflow: hidden;
+    }
     .preview {
         background-color: var(--panel-document-message-from-me-background-color);
-        border-radius: $pix-6;
+        border-radius: 0 0 $pix-6 $pix-6;
         cursor: pointer;
         padding: 0.5em 1em;
         max-height: $pix-90;
         margin-bottom: 0.25em;
+
+        &.no-thumbail {
+            border-radius: $pix-6;
+        }
 
         &.no-from-me {
             background-color: var(--panel-document-message-no-from-me-background-color);

@@ -48,7 +48,7 @@ export const createHtmlMessageContent = (messageContent: string) => {
         newMessageContent = newMessageContent?.replace(regexEmojis, (x: string) => {
             const emoji: any = findEmoji(x);
             if (emoji && emoji.thumbail) {
-                return `<img style='height: 20px; width: 20px; vertical-align: middle' src='data:image/png;base64,${emoji['thumbail']}'/>`;
+                return `<img style='height: 20px; width: 20px; vertical-align: middle; margin: 0 0.1em' src='data:image/png;base64,${emoji['thumbail']}'/>`;
             }
             return x;
         });
@@ -74,3 +74,16 @@ export const convertBase64 = (file: any) => {
         };
     });
 };
+
+export const listEmojisByCategory = (category: string) => {
+    //@ts-ignore
+    return emojis[category];
+}
+
+export const getCategories = () => {
+    return categories;
+}
+
+export const listCategoryByIndex = (index: number) => {
+    return categories[index];
+}

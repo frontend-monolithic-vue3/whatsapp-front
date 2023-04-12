@@ -1,8 +1,8 @@
 <template>
-  <div v-if="quotedMessage.newMessageContent" :class="`${APP_PREFIX}-quoted-conversation`" v-html="quotedMessage.newMessageContent">
+  <div v-if="newConversationMessage" :class="`${APP_PREFIX}-quoted-conversation`" v-html="newConversationMessage">
   </div>
   <div v-else :class="`${APP_PREFIX}-quoted-conversation`">
-    <span v-if="!quotedMessage.newMessageContent">{{quotedMessage.messageContent}}</span>
+    <span v-if="!newConversationMessage">{{quotedMessage.messageContent}}</span>
   </div>
 </template>
 

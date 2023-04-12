@@ -1,0 +1,46 @@
+@import '../../../../../../assets/styles/variables';
+
+.#{$app-prefix}-search-contact {
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.3em;
+    background-color: var(--panel-search-conversations-background-color);
+    height: $panel-search-conversation-height;
+    justify-content: center;
+    padding: 0 0.5em;
+
+    .search-text {
+        background-color: var(--panel-search-conversations-search-text-background-color);
+        border-radius: $pix-5;
+        display: grid;
+        gap: 0.5em;
+        grid-template-columns: 1fr 9fr;
+        padding: 0.5em;
+        font-size: 0.9em;
+        outline: 0px none transparent;
+        --moz-user-select: text;
+        user-select: text;
+
+        .icon {
+            align-items: center;
+            color: var(--panel-search-conversations-search-text-icon-color);
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            transform: scale(1.1);
+        }
+
+        .input {
+            background-color: var(--panel-search-conversations-search-text-background-color);
+            color: var(--panel-search-conversations-search-text-font-color);
+            font-size: 0.9em;
+            border: none;
+            outline: none;
+
+            &:focus::-webkit-input-placeholder {
+                opacity: 0;
+            }
+        }
+    }
+}

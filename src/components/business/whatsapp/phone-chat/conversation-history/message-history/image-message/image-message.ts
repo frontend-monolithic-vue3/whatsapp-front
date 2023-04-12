@@ -1,9 +1,10 @@
-import { defineComponent } from "vue";
+import { defineComponent, ref, watchEffect } from "vue";
 
 import useOverspread from "../../../../../../../composables/common/overspread.composable";
 import usePhoneChat from "../../../../../../../composables/business/phone-chat.composable";
 
 import { TypeOverspreadEnum } from "../../../../../../../enums/type-overspread.enum";
+import { createHtmlMessageContent, findEmoji, isEmoji } from "../../../../../../../utils/media.util";
 
 export default defineComponent({
     props: {
@@ -13,6 +14,7 @@ export default defineComponent({
         }
     },
     setup(props) {
+        const newConversationMessage = ref(null);
 
         const {
             setType,
@@ -29,8 +31,14 @@ export default defineComponent({
             openCloseOverspread(true);
         }
 
+        watchEffect(() => {
+            props?.multimediaMessage?.messageContent;
+            newConversationMessage.value = createHtmlMessageContent(props?.multimediaMessage?.messageContent);
+        });
+
         return {
-            openOverlayPreview
+            openOverlayPreview,
+            newConversationMessage
         }
     }
 });

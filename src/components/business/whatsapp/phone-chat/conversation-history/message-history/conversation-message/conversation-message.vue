@@ -2,20 +2,20 @@
   <div :class="`${APP_PREFIX}-conversation-message`">
     <span
       v-if="
-        !multimediaMessage?.thumbail && !multimediaMessage.newMessageContent
+        !thumbailMessage && !newConversationMessage
       "
       class="message-history-text"
       >{{ multimediaMessage.messageContent }}</span
     >
     <span
-      v-if="!multimediaMessage?.thumbail && multimediaMessage.newMessageContent"
-      v-html="multimediaMessage.newMessageContent"
+      v-if="!thumbailMessage && newConversationMessage"
+      v-html="newConversationMessage"
       class="message-history-text"
     ></span>
-    <div v-if="multimediaMessage?.thumbail" class="message-history-emoji">
+    <div v-if="thumbailMessage" class="message-history-emoji">
       <img
         class="message-history-emoji-image"
-        :src="`data:image/png;base64,${multimediaMessage?.thumbail}`"
+        :src="`data:image/png;base64,${thumbailMessage}`"
       />
     </div>
     <div class="space-message-history"></div>

@@ -12,8 +12,7 @@ import {
 
 import { executeAction } from "../../utils/vuex.util";
 
-import categories from "../../assets/emojis/categories.json";
-import emojis from "../../assets/emojis/data-by-group2.json";
+import { getCategories, listEmojisByCategory, listCategoryByIndex } from "../../utils/media.util";
 
 export default function useEmojis() {
     
@@ -44,26 +43,26 @@ export default function useEmojis() {
     }
 
     const getEmojisByCategory = (category: string) => {
-        //@ts-ignore
-        return emojis[category];
+        return listEmojisByCategory(category);
     }
 
     const getCategoriesEmoji = () => {
-        return categories;
+        return getCategories();
     }
 
-    const getFirstCategory = () => {
-        return categories[0];
+    const getCategoryByIndex = (index: number) => {
+        return listCategoryByIndex(index);
     }
 
     return {
         categorySelect,
         isOpen,
         emojiSelect,
+        getCategoriesEmoji,
+        getCategoryByIndex,
         getEmojisByCategory,
-        getFirstCategory,
         openCloseEmojis,
         setCategorySelect,
-        setEmojiSelect,getCategoriesEmoji
+        setEmojiSelect
     }
 }
