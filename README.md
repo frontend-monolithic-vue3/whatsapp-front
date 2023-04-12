@@ -18,7 +18,7 @@
 
 ## Servidor de desarrollo
 
-<p style='text-align: justify;'> Primero debemos clonar el código del <a href="https://github.com/lamatcalderon/whatsapp-front">repositorio</a> y con una terminal instalar las dependencias</p> 
+<p style='text-align: justify;'> Primero debemos clonar el código del <a href="https://github.com/frontend-monolithic-vue3/whatsapp-front">repositorio</a> y con una terminal instalar las dependencias</p> 
 
 ```sh
 npm i
