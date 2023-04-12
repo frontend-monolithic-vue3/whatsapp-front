@@ -3,7 +3,7 @@
 .#{$app-prefix}-list-contact {
     background-color: var(--panel-modal-send-contact-list-contact-background-color);
     padding: 0 0.5em;
-    height: $pix-450;
+    height: $pix-250;
     overflow-y: auto;
 
     .title {
@@ -11,5 +11,11 @@
         font-weight: 600;
         padding: 2.5em 0em 1em 1.5em;
         text-transform: uppercase;
+    }
+}
+
+@media (min-width: 35em) {
+    .#{$app-prefix}-list-contact {
+        height: $pix-350;
     }
 }
